@@ -1,0 +1,11 @@
+version: '3'
+services:
+  s3proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.oss
+    image: 190976442332.dkr.ecr.us-west-1.amazonaws.com/nginx-s3-gateway:latest
+    ports:
+      - '3000:80'
+    env_file:
+      - .env
